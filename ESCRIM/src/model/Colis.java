@@ -19,6 +19,15 @@ public class Colis {
 		this.designation = designation;
 		this.precisions = precisions;
 	}
+	
+	public Colis(String nature, int idColis, float volume, float cotes, String designation) {
+		this.nature = nature;
+		this.idColis = idColis;
+		this.volume = volume;
+		this.cotes = cotes;
+		this.designation = designation;
+		this.precisions = null;
+	}
 
 	@Override
 	public boolean equals(Object obj) {

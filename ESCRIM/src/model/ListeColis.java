@@ -32,8 +32,24 @@ public class ListeColis {
 		return -1;
 	}
 	
-	public void addColis() {}
-	public void deleteColis(int idColis) {}
-	public void updateColis() {}
+	public Colis addColis(String nature, int idColis, float volume, float cotes, String designation, String precisions) {
+		
+		if (findColis(idColis) == -1)
+		{
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
+			return colis;
+		}
+		return null;
+	}
+	
+	public void deleteColis(int idColis) {
+		int indice = findColis(idColis);
+		if (indice != -1) {
+			lesColis.remove(indice);
+			}
+	}
+	
+	public void updateColis(int idColis, String precisions) {}
 
 }
