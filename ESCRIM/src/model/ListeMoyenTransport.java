@@ -32,8 +32,33 @@ public class ListeMoyenTransport {
 		return -1;
 	}
 	
-	public void addMoyenTransport() {}
-	public void deleteMoyenTransport() {}
+	public MoyenTransport addMoyenTransport(String nom, float chargeMax, float volumeUtilisable, int longueurPiste,  int porteeCharge, int rayonAction, int vitesseDeCroisiere, float consommationCarburant, String positionPalettes) {
+		if (findMoyenTransport(nom) == -1)
+		{
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+			return moyenTransport;
+		}
+		return null;
+	}
+	
+	public MoyenTransport addMoyenTransport(String nom, float chargeMax, float volumeUtilisable, int longueurPiste,  int porteeCharge, int rayonAction, int vitesseDeCroisiere, float consommationCarburant) {
+		if (findMoyenTransport(nom) == -1)
+		{
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant);
+			this.lesTransports.add(moyenTransport);
+			return moyenTransport;
+		}
+		return null;
+	}
+	
+	public void deleteMoyenTransport(String nom) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1) {
+			lesTransports.remove(indice);
+			}
+	}
+	
 	public void updateMoyenTransport() {}
-
+	
 }

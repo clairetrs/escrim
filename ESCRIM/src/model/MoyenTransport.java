@@ -26,6 +26,18 @@ public class MoyenTransport {
 		this.positionPalettes = positionPalettes;
 	}
 	
+	public MoyenTransport(String nom, float chargeMax, float volumeUtilisable, int longueurPiste,  int porteeCharge, int rayonAction, int vitesseDeCroisiere, float consommationCarburant){
+		this.nom = nom;
+		this.chargeMax = chargeMax;
+		this.volumeUtilisable = volumeUtilisable;
+		this.longueurPisteMin = longueurPiste;
+		this.porteeCharge = porteeCharge;
+		this.rayonAction = rayonAction;
+		this.vitesseDeCroisiere = vitesseDeCroisiere;
+		this.consommationCarburant = consommationCarburant;
+		this.positionPalettes = null;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
