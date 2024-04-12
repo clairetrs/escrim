@@ -7,7 +7,10 @@ public class ListeColis {
 	
 	private List<Colis> lesColis;
 	private static ListeColis instance;
-	
+
+	/**
+	 *Constructeur (privé). 
+	 */
 	private ListeColis() {
 		this.lesColis = new ArrayList<Colis>();
 	}
@@ -21,6 +24,13 @@ public class ListeColis {
 		return instance;
 	}
 	
+	/**
+	   * Retrouve si un Colis appartient à lesColis à partir de son idColis, et renvoie l'indice dans lesColis auquel il se trouve.
+	   * Si le Colis n'appartient pas à lesColis, renvoie -1. 
+	   * 
+	   * @param idColis		Le idColis du Colis à retrouver
+	   * @return int
+	   */
 	public int findColis(int idColis) {
 		for (int i = 0; i < lesColis.size(); i++)
 		{
@@ -32,17 +42,32 @@ public class ListeColis {
 		return -1;
 	}
 	
-	public Colis addColis(String nature, int idColis, float volume, float cotes, String designation, String precisions) {
+	/**
+	   * Ajoute un Colis à lesColis si son idColis n'apparaît pas déjà dedans. 
+	   * 
+	   * @param nature 				La nature du Colis à ajouter
+	   * @param idColis 			Le idColis du Colis à ajouter
+	   * @param volume 				Le volume du Colis à ajouter
+	   * @param cotes 				Les cotes  du Colis à ajouter
+	   * @param designation 		La designation du Colis à ajouter
+	   * @param precisions 			Les precisions du Colis à ajouter
+	   * @return void
+	   */
+	public void addColis(String nature, int idColis, float volume, float cotes, String designation, String precisions) {
 		
 		if (findColis(idColis) == -1)
 		{
 			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
 			this.lesColis.add(colis);
-			return colis;
 		}
-		return null;
 	}
 	
+	/**
+	   * Supprime un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 			Le idColis du Colis à supprimer
+	   * @return void
+	   */
 	public void deleteColis(int idColis) {
 		int indice = findColis(idColis);
 		if (indice != -1) {
