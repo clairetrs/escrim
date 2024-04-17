@@ -75,6 +75,20 @@ public class ListeColis {
 			}
 	}
 	
-	public void updateColis(int idColis, String precisions) {}
+	/**
+	   * Met à jour un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 		Le idColis du Colis à mettre à jour
+	   * @param precisions		Les precisions du Colis à modifier
+	   * @return void
+	   */
+	public void updateColis(int idColis, String precisions) {
+		int indice = findColis(idColis);
+		if (indice != -1)
+		{
+			lesColis.remove(indice);
+		}
+		
+	}
 
 }
