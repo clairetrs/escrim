@@ -104,7 +104,19 @@ public class ListeMateriel {
 		}
 	}
 	
-	public void deleteMateriel() {}
+	/**
+	   * Supprime un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 			Le idColisnomProduit du Materiel à supprimer
+	   * @return void
+	   */
+	public void deleteMateriel(String nomProduit) {
+		int indice = findMateriel(nomProduit);
+		if (indice != -1) {
+			lesMateriels.remove(indice);
+			}
+	}
+	
 	public void updateMateriel() {}
 
 }
