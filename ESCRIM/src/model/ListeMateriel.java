@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ListeMateriel {
@@ -42,7 +43,67 @@ public class ListeMateriel {
 		return -1;
 	}
 	
-	public void addMateriel() {}
+	/**
+	   * Ajoute un Materiel à lesMateriels si son nomProduit n'apparaît pas déjà dedans et que le Materiel est un AutreMateriel. 
+	   * 
+	   * @param nomProduit 			Le nomProduit du Materiel à ajouter
+	   * @param idColis 			Le idColis du Materiel à ajouter
+	   * @param quantite 			La quantite du Materiel à ajouter
+	   * @param unite 				La unite du Materiel à ajouter
+	   * @param volume 				Le volume du Materiel à ajouter
+	   * @return void
+	   */
+	public void addMateriel(String nomProduit, int idColis, int quantite, String unite, float volume) {
+		if (findMateriel(nomProduit) == -1)
+		{
+			Materiel materiel = new AutreMateriel(nomProduit, idColis, quantite, unite, volume);
+			this.lesMateriels.add(materiel);
+		}
+	}
+	
+	/**
+	   * Ajoute un Materiel à lesMateriels si son nomProduit n'apparaît pas déjà dedans et que le Materiel est un MaterielMedical. 
+	   * 
+	   * @param nomProduit 			Le nomProduit du Materiel à ajouter
+	   * @param idColis 			Le idColis du Materiel à ajouter
+	   * @param quantite 			La quantite du Materiel à ajouter
+	   * @param unite 				La unite du Materiel à ajouter
+	   * @param volume 				Le volume du Materiel à ajouter
+	   * @param dlu 				La dlu du Materiel à ajouter
+	   * @param numeroLot 			Le numeroLot du Materiel à ajouter
+	   * @return void
+	   */
+	public void addMateriel(String nomProduit, int idColis, int quantite, String unite, float volume, Date dlu, int numeroLot) {
+		if (findMateriel(nomProduit) == -1)
+		{
+			Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
+			this.lesMateriels.add(materiel);
+		}
+	}
+	
+	/**
+	   * Ajoute un Materiel à lesMateriels si son nomProduit n'apparaît pas déjà dedans et que le Materiel est un Medicament. 
+	   * 
+	   * @param nomProduit 				Le nomProduit du Materiel à ajouter
+	   * @param idColis 				Le idColis du Materiel à ajouter
+	   * @param quantite 				La quantite du Materiel à ajouter
+	   * @param unite 					La unite du Materiel à ajouter
+	   * @param volume 					Le volume du Materiel à ajouter
+	   * @param dlu 					La dlu du Materiel à ajouter
+	   * @param numeroLot 				Le numeroLot du Materiel à ajouter
+	   * @param formeDosage 			La formeDosage du Materiel à ajouter
+	   * @param classeTherapeutique 	La classeTherapeutique du Materiel à ajouter
+	   * @param dci 					Le dci du Materiel à ajouter
+	   * @return void
+	   */
+	public void addMateriel(String nomProduit, int idColis, int quantite, String unite, float volume, Date dlu, int numeroLot, String formeDosage, String classeTherapeutique, String dci) {
+		if (findMateriel(nomProduit) == -1)
+		{
+			Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+			this.lesMateriels.add(materiel);
+		}
+	}
+	
 	public void deleteMateriel() {}
 	public void updateMateriel() {}
 
