@@ -97,7 +97,212 @@ public class ListeMoyenTransport {
 			lesTransports.remove(indice);
 			}
 	}
+
+	/**
+	   * Met à jour la chargeMax d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 			Le nom du MoyenTransport à mettre à jour
+	   * @param chargeMax		La chargeMax du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateChargeMaxTransport(String nom, float chargeMax) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
 	
-	public void updateMoyenTransport() {}
+	/**
+	   * Met à jour le volumeUtilisable d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 					Le nom du MoyenTransport à mettre à jour
+	   * @param volumeUtilisable		Le volumeUtilisable du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateVolumeUtilisableTransport(String nom, float volumeUtilisable) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
 	
+	/**
+	   * Met à jour la longueurPiste d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 				Le nom du MoyenTransport à mettre à jour
+	   * @param longueurPiste		La longueurPiste du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateLongueurPisteTransport(String nom, int longueurPiste) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour la porteeCharge d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 			Le nom du MoyenTransport à mettre à jour
+	   * @param porteeCharge	La porteeCharge du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updatePorteeChargeTransport(String nom, int porteeCharge) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour le rayonAction d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 			Le nom du MoyenTransport à mettre à jour
+	   * @param rayonAction		Le rayonAction du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateRayonActionTransport(String nom, int rayonAction) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour la vitesseDeCroisiere d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 					Le nom du MoyenTransport à mettre à jour
+	   * @param vitesseDeCroisiere		La vitesseDeCroisiere du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateVitesseDeCroisiereTransport(String nom, int vitesseDeCroisiere) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour la consommationCarburant d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 						Le nom du MoyenTransport à mettre à jour
+	   * @param consommationCarburant		La consommationCarburant du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updateConsommationCarburantTransport(String nom, float consommationCarburant) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			String positionPalettes = ancienMoyenTransport.getPositionPalettes();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour la positionPalettes d'un MoyenTransport de lesTransports si son nom apparaît dedans. 
+	   * 
+	   * @param nom 					Le nom du MoyenTransport à mettre à jour
+	   * @param positionPalettes		La positionPalettes du MoyenTransport à modifier
+	   * @return void
+	   */
+	public void updatePositionPalettesTransport(String nom, String positionPalettes) {
+		int indice = findMoyenTransport(nom);
+		if (indice != -1)
+		{
+			MoyenTransport ancienMoyenTransport = lesTransports.get(indice);
+			float volumeUtilisable = ancienMoyenTransport.getVolumeUtilisable();
+			int longueurPiste = ancienMoyenTransport.getLongueurPisteMin();
+			int porteeCharge = ancienMoyenTransport.getPorteeCharge();
+			float chargeMax = ancienMoyenTransport.getChargeMax();
+			int vitesseDeCroisiere = ancienMoyenTransport.getVitesseDeCroisiere();
+			float consommationCarburant = ancienMoyenTransport.getConsommationCarburant();
+			int rayonAction = ancienMoyenTransport.getRayonAction();
+			lesTransports.remove(indice);
+			MoyenTransport moyenTransport = new MoyenTransport(nom, chargeMax, volumeUtilisable, longueurPiste, porteeCharge, rayonAction, vitesseDeCroisiere, consommationCarburant, positionPalettes);
+			this.lesTransports.add(moyenTransport);
+		}
+		
+	}
 }
