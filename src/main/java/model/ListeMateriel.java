@@ -117,6 +117,85 @@ public class ListeMateriel {
 			}
 	}
 	
-	public void updateMateriel() {}
+	/**
+	   * Met à jour l' idColis d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 	Le nomProduit du Materiel à mettre à jour
+	   * @param idColis		L' idColis du Materiel à modifier
+	   * @return void
+	   */
+	public void updateIdColisMateriel() {}
+	
+	/**
+	   * Met à jour la quantite d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param quantite		La quantite du Materiel à modifier
+	   * @return void
+	   */
+	public void updateQuantiteMateriel() {}
+	
+	/**
+	   * Met à jour l'unite d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param unite			L'unite du Materiel à modifier
+	   * @return void
+	   */
+	public void updateUniteMateriel() {}
+	
+	/**
+	   * Met à jour le volume d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param volume			Le volume du Materiel à modifier
+	   * @return void
+	   */
+	public void updateVolumeMateriel() {}
+	
+	/**
+	   * Met à jour la dlu d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param dlu				La dlu du Materiel à modifier
+	   * @return void
+	   */
+	public void updateDluMateriel() {}
+	
+	/**
+	   * Met à jour le numeroLot d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param numeroLot		Le numeroLot du Materiel à modifier
+	   * @return void
+	   */
+	public void updateNumeroLotMateriel() {}
+	
+	/**
+	   * Met à jour le dci d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param dci				Le dci du Materiel à modifier
+	   * @return void
+	   */
+	public void updateDciMateriel() {}
+	
+	/**
+	   * Met à jour la formeDosage d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 		Le nomProduit du Materiel à mettre à jour
+	   * @param formeDosage		La formeDosage du Materiel à modifier
+	   * @return void
+	   */
+	public void updateFormeDosageMateriel() {}
+	
+	/**
+	   * Met à jour la classeTherapeutique d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 				Le nomProduit du Materiel à mettre à jour
+	   * @param classeTherapeutique		La classeTherapeutique du Materiel à modifier
+	   * @return void
+	   */
+	public void updateClasseherapeutiqueMateriel() {}
 
 }
