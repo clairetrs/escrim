@@ -117,6 +117,13 @@ public class ListeMateriel {
 			}
 	}
 	
+	/**
+	   * Met à jour l' idColis d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
+	   * 
+	   * @param nomProduit 	Le nomProduit du Materiel à mettre à jour
+	   * @param idColis		L' idColis du Materiel à modifier
+	   * @return void
+	   */
 	public void updateIdColisMateriel(String nomProduit, int idColis) {
 	    int indice = findMateriel(nomProduit);
 	    if (indice != -1) {
