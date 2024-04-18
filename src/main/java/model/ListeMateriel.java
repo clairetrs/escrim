@@ -117,15 +117,46 @@ public class ListeMateriel {
 			}
 	}
 	
-	/**
-	   * Met à jour l' idColis d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
-	   * 
-	   * @param nomProduit 	Le nomProduit du Materiel à mettre à jour
-	   * @param idColis		L' idColis du Materiel à modifier
-	   * @return void
-	   */
-	public void updateIdColisMateriel() {}
-	
+	public void updateIdColisMateriel(String nomProduit, int idColis) {
+	    int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColisToUpdate = ancienMateriel.getIdColis();
+	        int quantite = ancienMateriel.getQuantite();
+	        String unite = ancienMateriel.getUnite();
+	        float volume = ancienMateriel.getVolume();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {
+	            AutreMateriel autreMateriel = (AutreMateriel) ancienMateriel;
+	            Materiel materiel = new AutreMateriel(nomProduit, idColisToUpdate, quantite, unite, volume);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {
+	            MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
+	            Date dlu = materielMedical.getDlu();
+	            int numeroLot = materielMedical.getNumeroLot();
+	            Materiel materiel = new MaterielMedical(nomProduit, idColisToUpdate, quantite, unite, volume, dlu, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	            Medicament medicament = (Medicament) ancienMateriel;
+	            Date dlu = medicament.getDlu();
+	            int numeroLot = medicament.getNumeroLot();
+	            String formeDosage = medicament.getFormeDosage();
+	            String classeTherapeutique = medicament.getClasseTherapeutique();
+	            String dci = medicament.getDci();
+	            Materiel materiel = new Medicament(nomProduit, idColisToUpdate, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
+
 	/**
 	   * Met à jour la quantite d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
 	   * 
