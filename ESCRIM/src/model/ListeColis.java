@@ -76,17 +76,116 @@ public class ListeColis {
 	}
 	
 	/**
-	   * Met à jour un Colis de lesColis si son idColis apparaît dedans. 
+	   * Met à jour la nature d'un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 	Le idColis du Colis à mettre à jour
+	   * @param nature		La nature du Colis à modifier
+	   * @return void
+	   */
+	public void updateNatureColis(int idColis, String nature) {
+		int indice = findColis(idColis);
+		if (indice != -1)
+		{
+			Colis ancienColis = lesColis.get(indice);
+			float volume = ancienColis.getVolume();
+			float cotes = ancienColis.getCotes();
+			String designation = ancienColis.getDesignation();
+			String precisions = ancienColis.getPrecisions();
+			lesColis.remove(indice);
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour le volume d'un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 	Le idColis du Colis à mettre à jour
+	   * @param volume		Le volume du Colis à modifier
+	   * @return void
+	   */
+	public void updateVolumeColis(int idColis, float volume) {
+		int indice = findColis(idColis);
+		if (indice != -1)
+		{
+			Colis ancienColis = lesColis.get(indice);
+			String nature = ancienColis.getNature();
+			float cotes = ancienColis.getCotes();
+			String designation = ancienColis.getDesignation();
+			String precisions = ancienColis.getPrecisions();
+			lesColis.remove(indice);
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour les cotes d'un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 	Le idColis du Colis à mettre à jour
+	   * @param cotes		Les cotes du Colis à modifier
+	   * @return void
+	   */
+	public void updateCotesColis(int idColis, float cotes) {
+		int indice = findColis(idColis);
+		if (indice != -1)
+		{
+			Colis ancienColis = lesColis.get(indice);
+			String nature = ancienColis.getNature();
+			float volume = ancienColis.getVolume();
+			String precisions = ancienColis.getPrecisions();
+			String designation = ancienColis.getDesignation();
+			lesColis.remove(indice);
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour les precisions d'un Colis de lesColis si son idColis apparaît dedans. 
 	   * 
 	   * @param idColis 		Le idColis du Colis à mettre à jour
 	   * @param precisions		Les precisions du Colis à modifier
 	   * @return void
 	   */
-	public void updateColis(int idColis, String precisions) {
+	public void updatePrecisionsColis(int idColis, String precisions) {
 		int indice = findColis(idColis);
 		if (indice != -1)
 		{
+			Colis ancienColis = lesColis.get(indice);
+			String nature = ancienColis.getNature();
+			float volume = ancienColis.getVolume();
+			float cotes = ancienColis.getCotes();
+			String designation = ancienColis.getDesignation();
 			lesColis.remove(indice);
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
+		}
+		
+	}
+	
+	/**
+	   * Met à jour la designation d'un Colis de lesColis si son idColis apparaît dedans. 
+	   * 
+	   * @param idColis 		Le idColis du Colis à mettre à jour
+	   * @param designation		La designation du Colis à modifier
+	   * @return void
+	   */
+	public void updateDesignationColis(int idColis, String designation) {
+		int indice = findColis(idColis);
+		if (indice != -1)
+		{
+			Colis ancienColis = lesColis.get(indice);
+			String nature = ancienColis.getNature();
+			float volume = ancienColis.getVolume();
+			float cotes = ancienColis.getCotes();
+			String precisions = ancienColis.getPrecisions();
+			lesColis.remove(indice);
+			Colis colis = new Colis(nature, idColis, volume, cotes, designation, precisions);
+			this.lesColis.add(colis);
 		}
 		
 	}
