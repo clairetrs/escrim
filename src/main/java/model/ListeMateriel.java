@@ -129,14 +129,13 @@ public class ListeMateriel {
 	    if (indice != -1) {
 	        Materiel ancienMateriel = lesMateriels.get(indice);
 	        
-	        int idColisToUpdate = ancienMateriel.getIdColis();
 	        int quantite = ancienMateriel.getQuantite();
 	        String unite = ancienMateriel.getUnite();
 	        float volume = ancienMateriel.getVolume();
 	        
 	        if (ancienMateriel instanceof AutreMateriel) {
 	            AutreMateriel autreMateriel = (AutreMateriel) ancienMateriel;
-	            Materiel materiel = new AutreMateriel(nomProduit, idColisToUpdate, quantite, unite, volume);
+	            Materiel materiel = new AutreMateriel(nomProduit, idColis, quantite, unite, volume);
 	            lesMateriels.remove(indice);
 	            lesMateriels.add(materiel);
 	        } 
@@ -145,7 +144,7 @@ public class ListeMateriel {
 	            MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            Date dlu = materielMedical.getDlu();
 	            int numeroLot = materielMedical.getNumeroLot();
-	            Materiel materiel = new MaterielMedical(nomProduit, idColisToUpdate, quantite, unite, volume, dlu, numeroLot);
+	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
 	            lesMateriels.remove(indice);
 	            lesMateriels.add(materiel);
 	        } 
@@ -157,7 +156,7 @@ public class ListeMateriel {
 	            String formeDosage = medicament.getFormeDosage();
 	            String classeTherapeutique = medicament.getClasseTherapeutique();
 	            String dci = medicament.getDci();
-	            Materiel materiel = new Medicament(nomProduit, idColisToUpdate, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
 	            lesMateriels.remove(indice);
 	            lesMateriels.add(materiel);
 	        }
@@ -171,7 +170,44 @@ public class ListeMateriel {
 	   * @param quantite		La quantite du Materiel à modifier
 	   * @return void
 	   */
-	public void updateQuantiteMateriel() {}
+	public void updateQuantiteMateriel(String nomProduit, int quantite) {
+		int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColis = ancienMateriel.getIdColis();
+	        String unite = ancienMateriel.getUnite();
+	        float volume = ancienMateriel.getVolume();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {
+	            AutreMateriel autreMateriel = (AutreMateriel) ancienMateriel;
+	            Materiel materiel = new AutreMateriel(nomProduit, idColis, quantite, unite, volume);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {
+	            MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
+	            Date dlu = materielMedical.getDlu();
+	            int numeroLot = materielMedical.getNumeroLot();
+	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	            Medicament medicament = (Medicament) ancienMateriel;
+	            Date dlu = medicament.getDlu();
+	            int numeroLot = medicament.getNumeroLot();
+	            String formeDosage = medicament.getFormeDosage();
+	            String classeTherapeutique = medicament.getClasseTherapeutique();
+	            String dci = medicament.getDci();
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
 	
 	/**
 	   * Met à jour l'unite d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
