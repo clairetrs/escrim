@@ -253,7 +253,41 @@ public class ListeMateriel {
 	   * @param volume			Le volume du Materiel à modifier
 	   * @return void
 	   */
-	public void updateVolumeMateriel() {}
+	public void updateVolumeMateriel(String nomProduit, float volume) {
+		int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColis = ancienMateriel.getIdColis();
+	        int quantite = ancienMateriel.getQuantite();
+	        String unite = ancienMateriel.getUnite();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {
+	            Materiel materiel = new AutreMateriel(nomProduit, idColis, quantite, unite, volume);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {
+	            Date dlu = materielMedical.getDlu();
+	            int numeroLot = materielMedical.getNumeroLot();
+	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        } 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	            Date dlu = medicament.getDlu();
+	            int numeroLot = medicament.getNumeroLot();
+	            String formeDosage = medicament.getFormeDosage();
+	            String classeTherapeutique = medicament.getClasseTherapeutique();
+	            String dci = medicament.getDci();
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
 	
 	/**
 	   * Met à jour la dlu d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
