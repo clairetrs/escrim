@@ -438,7 +438,7 @@ public class ListeMateriel {
 	   * @param classeTherapeutique		La classeTherapeutique du Materiel à modifier
 	   * @return void
 	   */
-	public void updateClasseherapeutiqueMateriel(String nomProduit, String classeTherapeutique) {
+	public void updateClasseTherapeutiqueMateriel(String nomProduit, String classeTherapeutique) {
 		int indice = findMateriel(nomProduit);
 	    if (indice != -1) {
 	        Materiel ancienMateriel = lesMateriels.get(indice);
