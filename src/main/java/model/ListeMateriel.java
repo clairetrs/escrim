@@ -372,7 +372,31 @@ public class ListeMateriel {
 	   * @param dci				Le dci du Materiel à modifier
 	   * @return void
 	   */
-	public void updateDciMateriel() {}
+	public void updateDciMateriel(String nomProduit, String dci) {
+		int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColis = ancienMateriel.getIdColis();
+	        int quantite = ancienMateriel.getQuantite();
+	        float volume = ancienMateriel.getVolume();
+	        String unite = ancienMateriel.getUnite();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {} 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {} 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	        	int numeroLot = medicament.getNumeroLot();
+	        	Date dlu = materielMedical.getDlu();
+	            String formeDosage = medicament.getFormeDosage();
+	            String classeTherapeutique = medicament.getClasseTherapeutique();
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
 	
 	/**
 	   * Met à jour la formeDosage d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
@@ -381,7 +405,31 @@ public class ListeMateriel {
 	   * @param formeDosage		La formeDosage du Materiel à modifier
 	   * @return void
 	   */
-	public void updateFormeDosageMateriel() {}
+	public void updateFormeDosageMateriel(String nomProduit, String formeDosage) {
+		int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColis = ancienMateriel.getIdColis();
+	        int quantite = ancienMateriel.getQuantite();
+	        float volume = ancienMateriel.getVolume();
+	        String unite = ancienMateriel.getUnite();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {} 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {} 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	        	int numeroLot = medicament.getNumeroLot();
+	        	Date dlu = materielMedical.getDlu();
+	            String classeTherapeutique = medicament.getClasseTherapeutique();
+	            String dci = medicament.getDci();
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
 	
 	/**
 	   * Met à jour la classeTherapeutique d'un Materiel de lesMateriels si son nomProduit apparaît dedans. 
@@ -390,6 +438,30 @@ public class ListeMateriel {
 	   * @param classeTherapeutique		La classeTherapeutique du Materiel à modifier
 	   * @return void
 	   */
-	public void updateClasseherapeutiqueMateriel() {}
+	public void updateClasseherapeutiqueMateriel(String nomProduit, String classeTherapeutique) {
+		int indice = findMateriel(nomProduit);
+	    if (indice != -1) {
+	        Materiel ancienMateriel = lesMateriels.get(indice);
+	        
+	        int idColis = ancienMateriel.getIdColis();
+	        int quantite = ancienMateriel.getQuantite();
+	        float volume = ancienMateriel.getVolume();
+	        String unite = ancienMateriel.getUnite();
+	        
+	        if (ancienMateriel instanceof AutreMateriel) {} 
+	        
+	        else if (ancienMateriel instanceof MaterielMedical) {} 
+	        
+	        else if (ancienMateriel instanceof Medicament) {
+	        	int numeroLot = medicament.getNumeroLot();
+	        	Date dlu = materielMedical.getDlu();
+	            String formeDosage = medicament.getFormeDosage();
+	            String dci = medicament.getDci();
+	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
+	            lesMateriels.remove(indice);
+	            lesMateriels.add(materiel);
+	        }
+	    }
+	}
 
 }
