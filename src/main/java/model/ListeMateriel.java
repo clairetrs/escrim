@@ -57,7 +57,7 @@ public class ListeMateriel {
 		if (findMateriel(nomProduit) == -1)
 		{
 			Materiel materiel = new AutreMateriel(nomProduit, idColis, quantite, unite, volume);
-			this.lesColis.add(colis);
+			this.lesMateriels.add(materiel);
 		}
 	}
 	
@@ -77,7 +77,7 @@ public class ListeMateriel {
 		if (findMateriel(nomProduit) == -1)
 		{
 			Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
-			this.lesColis.add(colis);
+			this.lesMateriels.add(materiel);
 		}
 	}
 	
@@ -100,7 +100,7 @@ public class ListeMateriel {
 		if (findMateriel(nomProduit) == -1)
 		{
 			Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
-			this.lesColis.add(colis);
+			this.lesMateriels.add(materiel);
 		}
 	}
 	
@@ -140,6 +140,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            Date dlu = materielMedical.getDlu();
 	            int numeroLot = materielMedical.getNumeroLot();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
@@ -148,6 +149,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	            Date dlu = medicament.getDlu();
 	            int numeroLot = medicament.getNumeroLot();
 	            String formeDosage = medicament.getFormeDosage();
@@ -183,6 +185,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            Date dlu = materielMedical.getDlu();
 	            int numeroLot = materielMedical.getNumeroLot();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
@@ -191,6 +194,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	            Date dlu = medicament.getDlu();
 	            int numeroLot = medicament.getNumeroLot();
 	            String formeDosage = medicament.getFormeDosage();
@@ -226,6 +230,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            Date dlu = materielMedical.getDlu();
 	            int numeroLot = materielMedical.getNumeroLot();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
@@ -234,6 +239,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	            Date dlu = medicament.getDlu();
 	            int numeroLot = medicament.getNumeroLot();
 	            String formeDosage = medicament.getFormeDosage();
@@ -269,6 +275,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            Date dlu = materielMedical.getDlu();
 	            int numeroLot = materielMedical.getNumeroLot();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
@@ -277,6 +284,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	            Date dlu = medicament.getDlu();
 	            int numeroLot = medicament.getNumeroLot();
 	            String formeDosage = medicament.getFormeDosage();
@@ -309,6 +317,7 @@ public class ListeMateriel {
 	        if (ancienMateriel instanceof AutreMateriel) {} 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	            int numeroLot = materielMedical.getNumeroLot();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
 	            lesMateriels.remove(indice);
@@ -316,6 +325,7 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	            int numeroLot = medicament.getNumeroLot();
 	            String formeDosage = medicament.getFormeDosage();
 	            String classeTherapeutique = medicament.getClasseTherapeutique();
@@ -347,6 +357,7 @@ public class ListeMateriel {
 	        if (ancienMateriel instanceof AutreMateriel) {} 
 	        
 	        else if (ancienMateriel instanceof MaterielMedical) {
+				MaterielMedical materielMedical = (MaterielMedical) ancienMateriel;
 	        	Date dlu = materielMedical.getDlu();
 	            Materiel materiel = new MaterielMedical(nomProduit, idColis, quantite, unite, volume, dlu, numeroLot);
 	            lesMateriels.remove(indice);
@@ -354,7 +365,8 @@ public class ListeMateriel {
 	        } 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
-	        	Date dlu = materielMedical.getDlu();
+				Medicament medicament = (Medicament) ancienMateriel;
+	        	Date dlu = medicament.getDlu();
 	            String formeDosage = medicament.getFormeDosage();
 	            String classeTherapeutique = medicament.getClasseTherapeutique();
 	            String dci = medicament.getDci();
@@ -387,8 +399,9 @@ public class ListeMateriel {
 	        else if (ancienMateriel instanceof MaterielMedical) {} 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	        	int numeroLot = medicament.getNumeroLot();
-	        	Date dlu = materielMedical.getDlu();
+	        	Date dlu = medicament.getDlu();
 	            String formeDosage = medicament.getFormeDosage();
 	            String classeTherapeutique = medicament.getClasseTherapeutique();
 	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
@@ -420,8 +433,9 @@ public class ListeMateriel {
 	        else if (ancienMateriel instanceof MaterielMedical) {} 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	        	int numeroLot = medicament.getNumeroLot();
-	        	Date dlu = materielMedical.getDlu();
+	        	Date dlu = medicament.getDlu();
 	            String classeTherapeutique = medicament.getClasseTherapeutique();
 	            String dci = medicament.getDci();
 	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
@@ -453,8 +467,9 @@ public class ListeMateriel {
 	        else if (ancienMateriel instanceof MaterielMedical) {} 
 	        
 	        else if (ancienMateriel instanceof Medicament) {
+				Medicament medicament = (Medicament) ancienMateriel;
 	        	int numeroLot = medicament.getNumeroLot();
-	        	Date dlu = materielMedical.getDlu();
+	        	Date dlu = medicament.getDlu();
 	            String formeDosage = medicament.getFormeDosage();
 	            String dci = medicament.getDci();
 	            Materiel materiel = new Medicament(nomProduit, idColis, quantite, unite, volume, dlu, formeDosage, classeTherapeutique, dci, numeroLot);
